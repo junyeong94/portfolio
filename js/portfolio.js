@@ -1,0 +1,17 @@
+$(function(){
+    $('.kia').click(function(){
+        window.open('https://junyeong94.github.io/kia/');
+    });
+    $('.iwc').click(function(){
+        window.open('https://junyeong94.github.io/IWC/');
+    });
+    $('.tour').click(function(){
+        window.open('https://junyeong94.github.io/tour/');
+    });         
+    $('.mega').click(function(){
+        window.open('https://junyeong94.github.io/megabox/');
+    });  
+    $('.kakao').click(function(){
+        window.open('https://junyeong94.github.io/kakao/');
+    }); 
+});

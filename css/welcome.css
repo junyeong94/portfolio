@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+#welcome{position: relative; overflow: hidden; height:100vh;}
+#welcome video,#welcome .show_box{position: absolute; left:50% ; top:50%;transform: translate(-50%,-50%) ;z-index:8;width:100%; min-width:1280px;}
+#welcome .show_box{width:100%;z-index:12;}
+#welcome .show_box .layer{position: absolute; top:50%;left:50%; transform: translate(-50%,-50%); ;}
+#welcome .show_box .layer img{width:100%;}
+#welcome .show_box .layer05{left:49.5%}
+#welcome .show_box .layer05 span{font-size:2.4em; color:#24c482; text-shadow:1px 1px 5px black;}
+.btn_box{position: absolute;left:0;width:100%;bottom:10%; z-index: 9;text-align: center;}
+.btn_box>a{ display:inline-block;width:140px; margin:0 10px;border:2px solid white; border-radius:6px; padding:10px}
+.btn_box>a>input{font-size:20px;cursor: pointer; background-color: transparent; color:#fff;}
+.btn_box>a:hover{background-color:white;}
+.btn_box>a:hover>input{color: #128aa8;}
+
+
+
+
+
+
+/* 태블릿 스타일 */
+
+@media (max-width:960px){
+    #welcome{height:500px;}
+    #welcome video{min-width:900px;}
+    #welcome .show_box .layer05 span{font-size:1.5em;}
+}
+
+
+
+/* 모바일스타일 */
+@media (max-width:767px){
+    #welcome{height:100vw;}
+    #welcome video{width:auto;min-width:auto; height:100%;}
+    .btn_box{bottom:10vw;}
+}

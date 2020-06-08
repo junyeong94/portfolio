@@ -1,0 +1,20 @@
+@charset 'utf-8';
+
+.section{width:100%; max-width:1980px;padding-top:80px;padding-bottom:50px; margin:0 auto;}
+h2{color:#333;text-align:center; padding-top:60px; padding-bottom:20px; font-size:3em;} 
+.section#i_am h2{color:#fff; }
+.section#portfolio h2{color:black}
+.section>.content>p{color:#666; font-size:1.2em;text-align: center; }
+
+/* 태블릿 스타일 */
+
+@media (max-width:960px){
+}
+
+
+
+
+/* 모바일스타일 */
+@media (max-width:767px){
+
+}

@@ -1,0 +1,4 @@
+@charset 'utf-8';
+.skip_menu li{padding:10px;position: absolute; left:0;top:-100%;
+   width:100%;background:#fff;z-index: 11; text-align: center;}
+.skip_menu li a{display: inline-block; width:160px; padding:6px 0; text-align: center; color:#9e1030}

@@ -1,0 +1,7 @@
+@charset 'utf-8';
+*{margin:0;border:none;padding:0;}
+a{text-decoration: none;}
+address{list-style:none;}
+ul,ol,li{list-style: none;}
+.clearfix::after{content:'' ; display:block; clear: both;}
+img{vertical-align: top;}
