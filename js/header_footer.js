@@ -8,13 +8,8 @@ $(function(){
   //start 문서준비
   navMenu();
   sectionTop();
-  telBottom();
+  showH1();
   //end 문서준비
-
-  // function showbox(){
-  //   var showLayer=$('#welcome').children().children().children('.layer');
-  //   showLayer.fadeIn(3000);
-  // }
 
 
 
@@ -31,10 +26,13 @@ $(function(){
   $(window).resize(function(){
     navMenu();
     sectionTop();
-    telBottom();
+    scrollEvent();
   });
   //end 리사이즈이벤트
   
+  function showH1(){
+    $('#welcome p').fadeIn(3000);
+  }
 
   //start 네비게이션변환함수
   function navMenu(){
@@ -48,50 +46,52 @@ $(function(){
     }
   }
   //end 네비게이션변환함수
-  // $(window).scroll(function(){
-  //   var footerHeight=$('footer').height();
-  //   var scrBot=$(this).scrollTop();
-  //   if(scrtop>=telTop+footerHeight){
-  //     $('footer').fadeIn(200);
-  //     $('header').fadeOut(200);
-
-  //   }
-  // });
 
 
   // start 스크롤이벤트
+  function scrollEvent(){
     $(window).scroll(function(){
       scrTop=$(this).scrollTop();
-      if(scrTop<=50){
+      scrWid=$(this).width();
+      if(scrWid>=768){
+          if(scrTop<=50){
         $('.header').css({
           backgroundColor:'transparent',
           height:'100px'
         });
         colorWhiteGray('#ffffff');
-      }else if(scrTop>50 && scrTop<portfolioTop){
+          }else if(scrTop>50 && scrTop<portfolioTop){
+            $('.header').css({
+              backgroundColor:'#ffffff',
+              height:'80px'          
+            });       
+            $('.header a').css({color:'black'})
+            colorWhiteGray('#128aa8');
+          }else if(scrTop>=portfolioTop && scrTop<telTop){
+            $('.header').css({
+              backgroundColor:'#128aa8',
+              height:'80px'
+            });
+            $('.header a').css({color:'white'})
+            colorWhiteBlack('black');
+          }else if(scrTop>=telTop){
+            $('.header').css({
+              backgroundColor:'#ffffff',
+              height:'100px'
+            });
+            $('.header a').css({color:'black'})
+            colorWhiteGray('#128aa8');
+          }
+      }else{
         $('.header').css({
-          backgroundColor:'#ffffff',
-          height:'80px'          
-        });       
-        $('.header a').css({color:'black'})
-        colorWhiteGray('#128aa8');
-      }else if(scrTop>=portfolioTop && scrTop<telTop){
-        $('.header').css({
-          backgroundColor:'#128aa8',
+          backgroundColor:'white',
           height:'80px'
         });
-        $('.header a').css({color:'white'})
-        colorWhiteBlack('black');
-      }else if(scrTop>=telTop){
-        $('.header').css({
-          backgroundColor:'#ffffff',
-          height:'80px'
-        });
-        $('.header a').css({color:'black'})
-        colorWhiteGray('#cccccc');
-        
+        $('.header>h1>a').css({color:'black'})
+        $('.header>nav a').css({color:'white'})
       }
     });
+    }
   // end 스크롤이벤트
   
   // start header 폰트 컬러 함수
