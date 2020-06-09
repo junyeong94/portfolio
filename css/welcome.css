@@ -39,3 +39,8 @@
     #welcome p{font-size:2em;}
 
 }
+
+
+@media (max-width:440px){
+    #welcome p{font-size:1.6em;}
+}

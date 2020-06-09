@@ -12,8 +12,8 @@
 
 @media (max-width:767px){
     .header>.content::before{content:''; display: block;}
-    .header>h1>a{color: black;}
-    .header>h1>a:hover{color:#128aa8;}
+    .header>h1 a{color:black;}
+    .header>h1 a:hover{color:#128aa8;}
     #close_nav_btn{display:block;}
     .nav>ul{position: fixed; right:0; top:0; z-index:11; background:black; padding:9px 5%; width:50%; height:100%; display: none;}
     .nav>ul>li{padding:10px 0;}
