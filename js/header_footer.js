@@ -91,6 +91,7 @@ $(function(){
     $('.header h1 a').css({color:'black'});
     $('.header nav a').css({color:'white'});
     colorblackH1('#128aa8');
+    colorWhiteNav('#ffffff')
   };
   };
 
@@ -127,6 +128,14 @@ $(function(){
       });
       $('.header h1 a').mouseout(function(){
         $(this).css('color','black');
+      });
+    }
+    function colorWhiteNav(color){
+      $('.header nav a').mouseover(function(){
+        $(this).css('color',color);
+      });
+      $('.header nav a').mouseout(function(){
+        $(this).css('color','white');
       });
     }
     
