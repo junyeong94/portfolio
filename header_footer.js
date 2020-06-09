@@ -4,7 +4,7 @@ $(function(){
   var iamTop;
   var portfolioTop;
   var telTop;
-
+  var winWidth;
   //start 문서준비
   navMenu();
   sectionTop();
@@ -37,7 +37,8 @@ $(function(){
 
   //start 네비게이션변환함수
   function navMenu(){
-    var winWidth=$(window).width();
+    headerColor();
+    winWidth=$(window).width();
     if(winWidth>=768){
       $('.nav>ul').css('display','flex');
       $('#open_nav_btn').css('display','none');
@@ -48,50 +49,55 @@ $(function(){
   }
   //end 네비게이션변환함수
 
+  function headerColor(){
+    if(winWidth>=768){
+      if(scrTop<=50){
+        $('.header').css({
+          backgroundColor:'transparent',
+          height:'100px'
+        });
+        $('.header a').css({color:'black'})
+        colorWhiteGray('#ffffff');
+      }else if(scrTop>50 && scrTop<portfolioTop){
+        $('.header').css({
+          backgroundColor:'#ffffff',
+          height:'80px'          
+        });       
+        $('.header a').css({color:'black'})
+        colorWhiteGray('#128aa8');
+      }else if(scrTop>=portfolioTop && scrTop<telTop){
+        $('.header').css({
+          backgroundColor:'#128aa8',
+          height:'80px'
+        });
+        $('.header a').css({color:'white'})
+        colorWhiteBlack('black');
+      }else if(scrTop>=telTop){
+        $('.header').css({
+          backgroundColor:'#ffffff',
+          height:'80px'
+        });
+        $('.header a').css({color:'black'})
+        colorWhiteGray('#128aa8');
+      }
+  }else if(winWidth<=767){
+    $('.header').css({
+      backgroundColor:'white',
+      height:'80px'
+    });
+    $('.header h1 a').css({color:'black'});
+    $('.header nav a').css({color:'white'});
+    colorblackH1('#128aa8');
+  };
+  };
+
+
 
   // start 스크롤이벤트
   function scrollEvent(){
     $(window).scroll(function(){
       scrTop=$(this).scrollTop();
-      scrWid=$(this).width();
-      // console.log(scrWid);
-      if(scrWid>=768){
-          if(scrTop<=50){
-        $('.header').css({
-          backgroundColor:'transparent',
-          height:'100px'
-        });
-        colorWhiteGray('#ffffff');
-          }else if(scrTop>50 && scrTop<portfolioTop){
-            $('.header').css({
-              backgroundColor:'#ffffff',
-              height:'80px'          
-            });       
-            $('.header a').css({color:'black'})
-            colorWhiteGray('#128aa8');
-          }else if(scrTop>=portfolioTop && scrTop<telTop){
-            $('.header').css({
-              backgroundColor:'#128aa8',
-              height:'80px'
-            });
-            $('.header a').css({color:'white'})
-            colorWhiteBlack('black');
-          }else if(scrTop>=telTop){
-            $('.header').css({
-              backgroundColor:'#ffffff',
-              height:'100px'
-            });
-            $('.header a').css({color:'black'})
-            colorWhiteGray('#128aa8');
-          }
-      }else{
-        $('.header').css({
-          backgroundColor:'white',
-          height:'80px'
-        });
-        $('.header>h1 a').css({color:'black'})
-        $('.header>nav a').css({color:'white'})
-      }
+      headerColor();
     });
     }
   // end 스크롤이벤트
@@ -111,6 +117,14 @@ $(function(){
       });
       $('.header a').mouseout(function(){
         $(this).css('color','white');
+      });
+    }
+    function colorblackH1(color){
+      $('.header h1 a').mouseover(function(){
+        $(this).css('color',color);
+      });
+      $('.header h1 a').mouseout(function(){
+        $(this).css('color','black');
       });
     }
     
