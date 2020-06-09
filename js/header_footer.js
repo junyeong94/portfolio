@@ -96,8 +96,8 @@ $(function(){
 
   // start 스크롤이벤트
   function scrollEvent(){
-    scrTop=$(this).scrollTop();
     $(window).scroll(function(){
+      scrTop=$(this).scrollTop();
       headerColor();
     });
     }
