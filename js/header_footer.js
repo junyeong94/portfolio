@@ -11,6 +11,7 @@ $(function(){
   sectionTop();
   showH1();
   scrollEvent();
+  headerColor();
   //end 문서준비
 
 
@@ -51,6 +52,7 @@ $(function(){
   //end 네비게이션변환함수
 
   function headerColor(){
+    scrTop=$(this).scrollTop();
     if(winWidth>=768){
       if(scrTop<=50){
         $('.header').css({
@@ -97,7 +99,6 @@ $(function(){
   // start 스크롤이벤트
   function scrollEvent(){
     $(window).scroll(function(){
-      scrTop=$(this).scrollTop();
       headerColor();
     });
     }
