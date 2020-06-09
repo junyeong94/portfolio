@@ -9,6 +9,7 @@ $(function(){
   navMenu();
   sectionTop();
   showH1();
+  scrollEvent();
   //end 문서준비
 
 
@@ -53,7 +54,7 @@ $(function(){
     $(window).scroll(function(){
       scrTop=$(this).scrollTop();
       scrWid=$(this).width();
-      console.log(scrWid);
+      // console.log(scrWid);
       if(scrWid>=768){
           if(scrTop<=50){
         $('.header').css({
@@ -88,7 +89,7 @@ $(function(){
           backgroundColor:'white',
           height:'80px'
         });
-        $('.header>h1>a').css({color:'black'})
+        $('.header>h1 a').css({color:'black'})
         $('.header>nav a').css({color:'white'})
       }
     });
